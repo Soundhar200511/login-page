@@ -1,4 +1,5 @@
-// Menu items array
+
+  // Menu items array
 const menuItems = [
     { name: "Chicken Biryani", price: 360, image: "images/biryani.jpg" },
     { name: "Mutton Biryani", price: 420, image: "images/mutton_biryani.jpg" },
@@ -12,18 +13,20 @@ const menuItems = [
     { name: "Veg Meals", price: 200, image: "images/veg_meals.jpg" }
   ];
   
-  // Get the menu grid div
-  const menuGrid = document.getElementById('menuGrid');
+  // Wait for the page to load
+  window.addEventListener('DOMContentLoaded', () => {
+    const menuGrid = document.getElementById('menuGrid');
   
-  // Create food cards
-  menuItems.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'food-card';
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <h2>${item.name}</h2>
-      <p>₹${item.price}</p>
-    `;
-    menuGrid.appendChild(card);
+    // Create food cards
+    menuItems.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'food-card';
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <h2>${item.name}</h2>
+        <p>₹${item.price}</p>
+      `;
+      menuGrid.appendChild(card);
+    });
   });
   
